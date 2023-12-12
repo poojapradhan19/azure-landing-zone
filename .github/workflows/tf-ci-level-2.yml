@@ -27,7 +27,7 @@ jobs:
       with:
         repository: 'poojapradhan19/adfpipeline'
         ssh-strict: false
-        ssh-key: '{{ private_ssh }}'
+        ssh-key: '{{ secrets.private_ssh }}'
 
     # Initialize a new or existing Terraform working directory by creating initial files, loading any remote state, downloading modules, etc.
     - name: Terraform Init
