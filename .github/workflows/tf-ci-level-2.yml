@@ -23,6 +23,12 @@ jobs:
     - name: Setup Terraform
       uses: hashicorp/setup-terraform@v2
 
+    - uses: actions/checkout@v4
+      with:
+        repository: 'poojapradhan19/adfpipeline'
+        ssh-strict: false
+        ssh-key: '${{ secrets.private_ssh }}'
+
     # Initialize a new or existing Terraform working directory by creating initial files, loading any remote state, downloading modules, etc.
     - name: Terraform Init
       run: terraform -chdir=${{env.working-directory}} init -backend=false
